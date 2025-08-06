@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+}
+
+.todo-app {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h2 i {
+    margin-left: 10px;
+    color: #8e44ad;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f5f5;
+    border-radius: 30px;
+    padding: 5px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+#add-button {
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    background: #8e44ad;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s;
+}
+
+#add-button:hover {
+    background: #7d3c98;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #8e44ad;
+    color: #fff;
+}
+
+#clear-all {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    background: #ff5e5e;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+#clear-all:hover {
+    background: #ff3e3e;
+}
+
+ul {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+ul li {
+    position: relative;
+    padding: 12px 8px 12px 50px;
+    background: #f9f9f9;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+ul li:hover {
+    background: #f0f0f0;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg>');
+    background-size: cover;
+    background-position: center;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+    background: #f0f0f0;
+}
+
+ul li.checked::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%238e44ad" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>');
+}
+
+ul li span.task-text {
+    flex: 1;
+    font-size: 16px;
+    margin-right: 10px;
+    word-break: break-word;
+}
+
+ul li span.delete {
+    width: 30px;
+    height: 30px;
+    color: #ff5e5e;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+ul li span.delete:hover {
+    background: #feeaea;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    color: #555;
+    font-size: 14px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8e44ad;
+}
